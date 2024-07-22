@@ -5,26 +5,29 @@ int one_counter(unsigned short x );
 int main(void)
 {
 	unsigned short num;
-	printf("Enter the number :-\n");
+	printf("Enter the number in hex format :-\n");
 	fflush(stdout);
-	scanf("%hu",&num);
+	scanf("%x",&num);
 	printf("the number of ones is:- %d",one_counter(num));
 }
 
 int one_counter(unsigned short x)
 {
-	int counter=0,temp=0;
+	int counter=0,temp=0,mask=0x01;
 	while(x){
-		if(x%10==1){
+		if(x & mask)
+		{
 			temp++;
 		}
 		else
 		{
 			temp=0;
 		}
-		counter=counter<temp?temp :counter;
-		x/=10;
+		if(temp>counter)
+		{
+			counter=temp;
+		}
+		x=x>>1;
 	}
 	return counter;
 }
-
