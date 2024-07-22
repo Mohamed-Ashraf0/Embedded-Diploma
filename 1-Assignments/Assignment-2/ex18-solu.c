@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <math.h>
 int pow_3(int x);
@@ -21,13 +22,10 @@ int main(void)
 
 int pow_3(int x)
 {
-	int i=0;
-	while(pow(3,i)<=x)
+	int y=cbrt(x);
+	if(pow(y,3)==x)
 	{
-		if(pow(3,i)==x){
-			return 0;
-		}
-		i++;
+		return 0;
 	}
 	return 1;
 }
