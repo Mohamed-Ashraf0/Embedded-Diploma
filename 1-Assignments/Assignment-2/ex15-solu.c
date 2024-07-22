@@ -5,21 +5,21 @@ int one_counter(unsigned int x );
 int main(void)
 {
 	unsigned int num;
-	printf("Enter the number :-\n");
+	printf("Enter the number in hex format :-\n");
 	fflush(stdout);
-	scanf("%u",&num);
+	scanf("%x",&num);
 	printf("the number of ones is:- %d",one_counter(num));
 }
 
 int one_counter(unsigned int x)
 {
-	int counter=0;
+	int counter=0,mask=0x01;
 	while(x){
-		if(x%10==1){
+		if(x & mask)
+		{
 			counter++;
 		}
-		x/=10;
+		x=x>>1;
 	}
 	return counter;
 }
-
