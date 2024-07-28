@@ -25,7 +25,7 @@ int main(void)
 
 void Selectionsort(int *arr ,int size)
 {
-	int min_index;
+	int min_index,temp;
 	for(int i=0 ;i<size-1;i++)
 	{
 		min_index=i;
@@ -33,11 +33,13 @@ void Selectionsort(int *arr ,int size)
 		{
 			if(arr[min_index]>arr[j])
 			{
-				arr[j]=arr[j]+arr[min_index];
-				arr[min_index]=arr[j]-arr[min_index];
-				arr[j]=arr[j]-arr[min_index];
+				min_index=j;
 			}
 		}
+		temp=arr[i];
+		arr[i]=arr[min_index];
+		arr[min_index]=temp;
 	}
 }
+
 
