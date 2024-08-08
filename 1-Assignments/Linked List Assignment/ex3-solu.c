@@ -12,8 +12,6 @@ void insert_at_top (int data);
 void insert_at_last (int data);
 int size_of_list (void);
 void print_list (void);
-void insert_element(int pos ,int data);
-int find_middle_node (void);
 int find_fifth_node_from_end (void);
 int main(void)
 {
