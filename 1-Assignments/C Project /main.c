@@ -66,6 +66,7 @@ int main (void){
 			searchHighestGPA();
 			break;
 		case 8:
+			printf("Project terminated");
 			return 0;
 			break;
 		default:
@@ -76,5 +77,4 @@ int main (void){
 	}
 	return 0;
 }
-
 
