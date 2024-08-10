@@ -31,6 +31,7 @@ void addStudent(const struct student *const ptr)
 		{
 			link->next=NULL;
 			head=link;
+			printf("Student added successfully\n");
 			return;
 		}
 		current=head;
@@ -41,6 +42,7 @@ void addStudent(const struct student *const ptr)
 		}
 		link->next=NULL;
 		current->next=link;
+		printf("Student added successfully\n");
 	}
 	else
 	{
@@ -112,7 +114,7 @@ void updateStudent(int id)
 			printf("Enter GPA: ");
 			fflush(stdout);
 			scanf("%f",&(current->data.gpa));
-			printf("Student details updated\n");
+			printf("Student details updated successfully\n");
 			return;
 		}
 		current=current->next;
@@ -135,7 +137,7 @@ void deleteStudent(int id)
 		delete_node=head;
 		head=head->next;
 		free(delete_node);
-		printf("Student deleted\n");
+		printf("Student deleted successfully\n");
 		return;
 	}
 	//making 2 pointer to be able to make prev pointer skip deleted one
@@ -148,7 +150,7 @@ void deleteStudent(int id)
 			delete_node=current;
 			prev->next=current->next;
 			free(delete_node);
-			printf("Student deleted\n");
+			printf("Student deleted successfully\n");
 			return;
 		}
 		prev=prev->next;
